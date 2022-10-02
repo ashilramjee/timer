@@ -1,0 +1,175 @@
+.root {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 8px;
+    /* background-color: rgba(255, 255, 255, 0.126); */
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.specificTime {
+    padding: 10px 20px 10px 20px;
+    font-family: 'PoiretOne';
+    color: white;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: rgba(255, 255, 255, 0.126);
+    font-weight: 600;
+}
+
+.specificTime:hover:enabled {
+    border: 1px solid rgb(117, 164, 218);
+}
+
+.specificTime:disabled {
+    background-color: rgba(253, 27, 27, 0.126);
+    color: rgb(181, 156, 156);
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.controlButton {
+    padding: 6px 20px 6px 20px;
+    font-family: 'PoiretOne';
+    color: white;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-weight: 600;
+}
+
+.column {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgb(27, 20, 36);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 30%;
+}
+
+.numberTitle {
+    margin: 0;
+    font-weight: 800;
+    font-family: 'PoiretOne';
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.numbers {
+    font-size: 4.5rem;
+    text-align: center;
+    width: 100%;
+    height: 106px;
+    margin: 0;
+    color: white;
+    border: none;
+    background-color: transparent;
+    padding: 5px 0px 5px 0px;
+    border: 1px solid rgb(48, 40, 62);
+    border-radius: 8px;
+}
+
+.numbers:disabled {
+    border: 1px solid transparent;
+}
+
+.numbers:hover:enabled {
+    background-color: rgb(48, 40, 62);
+}
+
+.controlButton:hover {
+    border: 1px solid rgb(117, 164, 218);
+}
+
+.start {
+    background-color: rgb(16, 115, 52);
+}
+
+.stop {
+    background-color: rgb(208, 40, 40);
+}
+
+.pause {
+    background-color: rgb(70, 88, 202);
+}
+
+.reset {
+    background-color: rgb(190, 133, 48);
+}
+
+.instruction {
+    font-family: 'PoiretOne';
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .root {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .root {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .root {
+        width: 1170px;
+    }
+}
+
+@media (max-width: 768px) {
+    .numbers {
+        font-size: 1.5rem;
+        height: 45px;
+    }
+
+    .column {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .timer {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .numbers {
+        font-size: 2.8rem;
+        height: 85px;
+    }
+}
+
+@media (max-height: 500px) {
+    .options {
+        margin-top: 20px;
+    }
+  }

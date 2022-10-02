@@ -1,6 +1,8 @@
 {
   "name": "timer",
   "version": "0.1.0",
+  "author": "Ashil Ramjee",
+  "homepage": "https://ashilramjee.com/timer",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -39,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
