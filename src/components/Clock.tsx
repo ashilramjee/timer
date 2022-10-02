@@ -14,21 +14,21 @@ export const Clock = ({ setPlayingAnimation }: Props) => {
 
   const [started, setStarted] = React.useState(false);
   const [showInstructions, setShowInstructions] = React.useState(false);
-  const [audio] = React.useState(new Audio("/audio/alarm.mp3"));
+  const [audio] = React.useState(new Audio("/timer/audio/alarm.mp3"));
   const [playing, setPlaying] = React.useState(false);
 
   var doc = document.getElementById("site_title");
 
   React.useEffect(() => {
     playing ? audio.play() : audio.pause();
-  }, [playing]);
+  }, [playing, audio]);
 
   React.useEffect(() => {
     audio.addEventListener("ended", () => setPlaying(false));
     return () => {
       audio.removeEventListener("ended", () => setPlaying(false));
     };
-  }, []);
+  }, [audio]);
 
   const onChangeHours = (e: any) => {
     var value = e.target.value;
