@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Clock.module.css";
+import { BsFillVolumeUpFill, BsFillVolumeMuteFill } from "react-icons/bs";
 
 interface Props {
   setPlayingAnimation: any;
@@ -16,6 +17,7 @@ export const Clock = ({ setPlayingAnimation }: Props) => {
   const [showInstructions, setShowInstructions] = React.useState(false);
   const [audio] = React.useState(new Audio("/timer/audio/alarm.mp3"));
   const [playing, setPlaying] = React.useState(false);
+  const [sounds, setSounds] = React.useState(true);
 
   var doc = document.getElementById("site_title");
 
@@ -176,7 +178,9 @@ export const Clock = ({ setPlayingAnimation }: Props) => {
   };
 
   const playRinger = () => {
-    setPlaying(true);
+    if (sounds) {
+      setPlaying(true);
+    }
     setPlayingAnimation(true);
     setTimeout(() => {
       setPlayingAnimation(false);
@@ -273,37 +277,51 @@ export const Clock = ({ setPlayingAnimation }: Props) => {
         </div>
       </div>
 
-      {!started ? (
-        <div className={styles.controls}>
-          <button
-            className={`${styles.controlButton} ${styles.start}`}
-            onClick={startTimer}
-          >
-            Start
-          </button>
-          <button
-            className={`${styles.controlButton} ${styles.reset}`}
-            onClick={resetTimer}
-          >
-            Reset
-          </button>
-        </div>
-      ) : (
-        <div className={styles.controls}>
-          <button
-            className={`${styles.controlButton} ${styles.pause}`}
-            onClick={pauseTimer}
-          >
-            Pause
-          </button>
-          <button
-            className={`${styles.controlButton} ${styles.stop}`}
-            onClick={stopTimer}
-          >
-            Stop
-          </button>
-        </div>
-      )}
+      <div className={styles.controls}>
+        {!started ? (
+          <>
+            <button
+              className={`${styles.controlButton} ${styles.start}`}
+              onClick={startTimer}
+            >
+              Start
+            </button>
+            <button
+              className={`${styles.controlButton} ${styles.reset}`}
+              onClick={resetTimer}
+            >
+              Reset
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              className={`${styles.controlButton} ${styles.pause}`}
+              onClick={pauseTimer}
+            >
+              Pause
+            </button>
+            <button
+              className={`${styles.controlButton} ${styles.stop}`}
+              onClick={stopTimer}
+            >
+              Stop
+            </button>
+          </>
+        )}
+        <button
+          onClick={() => {
+            setSounds(!sounds);
+          }}
+          className={styles.volume}
+        >
+          {sounds ? (
+            <BsFillVolumeUpFill className={styles.volumeOn} />
+          ) : (
+            <BsFillVolumeMuteFill className={styles.volumeOff} />
+          )}
+        </button>
+      </div>
 
       {showInstructions && (
         <p className={styles.instruction}>You need to set or pick a time.</p>

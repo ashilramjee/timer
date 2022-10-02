@@ -127,6 +127,30 @@
     text-align: center;
 }
 
+.volume {
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+}
+
+.volume:hover {
+    transform: scale(1.1);
+}
+
+.volume svg {
+    width: 25px;
+    height: 25px;
+}
+
+.volumeOn {
+    color: rgb(16, 115, 52);;
+}
+
+.volumeOff {
+    color: rgb(209, 67, 67);
+}
+
 @media (min-width: 768px) {
     .root {
         width: 750px;
